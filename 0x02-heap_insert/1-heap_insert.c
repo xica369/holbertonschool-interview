@@ -21,10 +21,14 @@ heap_t *heap_insert(heap_t **root, int value)
 	{
 		return (NULL);
 	}
-	nodo->n = value;
-	nodo->left = NULL;
-	nodo->right = NULL;
-	nodo->parent = *root;
+	if (*root == NULL)
+	{
+		nodo->n = value;
+		nodo->left = NULL;
+		nodo->right = NULL;
+		nodo->parent = *root;
+		*root = nodo;
+	}
 
 	return (nodo);
 }
