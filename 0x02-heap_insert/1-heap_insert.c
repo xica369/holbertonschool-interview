@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * heap_insert -
+ * heap_insert - function that inserts a value into a Max Binary Heap
  *
  *@root: is a double pointer to the root node of the Heap
  *@value: is the value store in the node to be inserted
@@ -17,14 +17,18 @@ heap_t *heap_insert(heap_t **root, int value)
 		return (NULL);
 	}
 	nodo = calloc(1, sizeof(heap_t));
-        if (nodo == NULL)
-        {
-                return (NULL);
-        }
-	nodo->n = value;
-	nodo->left = NULL;
-	nodo->right = NULL;
-	nodo->parent = *root;
+	if (nodo == NULL)
+	{
+		return (NULL);
+	}
+	if (*root == NULL)
+	{
+		nodo->n = value;
+		nodo->left = NULL;
+		nodo->right = NULL;
+		nodo->parent = *root;
+		*root = nodo;
+	}
 
 	return (nodo);
 }
