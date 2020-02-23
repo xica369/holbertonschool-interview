@@ -17,7 +17,7 @@ def minOperations(n):
         return 0
 
     if n % 2 != 0:
-        return n + 1
+        return n
 
     copy = 1
     paste = 1
