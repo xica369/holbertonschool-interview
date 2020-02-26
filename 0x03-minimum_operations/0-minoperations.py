@@ -10,14 +10,8 @@ def minOperations(n):
     if not isinstance(n, int):
         return 0
 
-    if n < 1 or n is None:
+    if n <= 1 or n is None:
         return 0
-
-    if n == 1:
-        return 0
-
-    if n % 2 != 0:
-        return n
 
     copy = 1
     paste = 1
