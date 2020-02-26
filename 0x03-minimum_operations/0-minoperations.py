@@ -13,20 +13,30 @@ def minOperations(n):
     if n <= 1 or n is None:
         return 0
 
-    if n % 2 != 0:
-        return n
+    if n % 2 == 0:
+        copy = 1
+        paste = 1
+        h = 2
+        add = 2
 
-    copy = 1
-    paste = 1
-    h = 2
-    add = 2
+        while h < n:
+            if n == h * 2 or n >= h * 4:
+                copy = copy + 1
+                add = h
 
-    while h < n:
-        if n == h * 2 or n >= h * 4:
-            copy = copy + 1
-            add = h
+            paste = paste + 1
+            h = h + add
 
-        paste = paste + 1
-        h = h + add
+        return copy + paste
 
-    return copy + paste
+    else:
+        aux = 2
+        temp = n
+        h = 0
+        while temp >= aux:
+            if temp % aux == 0:
+                h = h + aux
+                temp = temp / aux
+            else:
+                aux = aux + 1
+        return h
