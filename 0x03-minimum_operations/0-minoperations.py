@@ -18,6 +18,9 @@ def minOperations(n):
     h = 2
     add = 2
 
+    if n % 2 != 0:
+        copy = 2
+
     while h < n:
         if n == h * 2 or n >= h * 4:
             copy = copy + 1
