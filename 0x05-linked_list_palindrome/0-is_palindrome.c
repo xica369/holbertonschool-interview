@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 {
 	int i, j;
 	listint_t *aux;
-	int buf[10000];
+	int buf[100000];
 
 	if (*head == NULL)
 	{
