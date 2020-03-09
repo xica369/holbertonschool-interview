@@ -9,40 +9,24 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int *grid, cont, cont1, cont2;
-	listint_t *temp;
+	int i, j;
+	listint_t *aux;
+	int buf[10000];
 
 	if (*head == NULL)
+	{
 		return (1);
-
-	temp = *head;
-	grid = malloc(sizeof(int));
-	if (grid == NULL)
-	{
-		free(grid);
-		return (0);
 	}
-	grid[0] = temp->n;
-	temp = temp->next;
-
-	for (cont = 1; temp != '\0'; temp = temp->next, cont++)
+	for (i = 0, aux = *head; aux != NULL; aux = aux->next, i++)
 	{
-		grid = realloc(grid, (cont + 1) * sizeof(int));
-		if (grid == NULL)
-		{
-			free(grid);
-			return (0);
-		}
-		grid[cont] = temp->n;
+		buf[i] = aux->n;
 	}
-	for (cont1 = 0, cont2 = cont - 1; cont1 < cont; cont1++, cont2--)
+	for (j = 0, i = i - 1; j < i; j++, i--)
 	{
-		if (grid[cont1] != grid[cont2])
+		if (buf[j] != buf[i])
 		{
-			free(grid);
 			return (0);
 		}
 	}
-	free(grid);
 	return (1);
 }
