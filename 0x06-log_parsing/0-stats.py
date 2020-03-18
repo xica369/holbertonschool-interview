@@ -15,6 +15,9 @@ try:
         split = split[::-1]
         count += 1
 
+        if len(split) != 9:
+            pass
+
         if count <= 10:
             size += int(split[0])
 
