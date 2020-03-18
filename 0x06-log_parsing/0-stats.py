@@ -14,7 +14,7 @@ try:
         split = line.split()
         split = split[::-1]
 
-        if len(split) > 8:
+        if len(split) > 2:
             count += 1
 
             if count <= 10:
@@ -32,9 +32,6 @@ try:
                         print("{}: {}".format(key, val))
 
                 count = 0
-                size = 0
-                codes_dict = {"200": 0, "301": 0, "400": 0, "401": 0,
-                              "403": 0, "404": 0, "405": 0, "500": 0}
 
 except Exception:
     pass
