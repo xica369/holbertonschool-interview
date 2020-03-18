@@ -13,23 +13,24 @@ try:
     for line in sys.stdin:
         split = line.split()
         split = split[::-1]
-        count += 1
 
-        if count <= 10:
+        if len(split) > 8:
+            count += 1
 
-            size += int(split[0])
-            code = split[1]
+            if count <= 10:
+                size += int(split[0])
+                code = split[1]
 
-            if code in codes_dict.keys():
-                codes_dict[code] += 1
+                if code in codes_dict.keys():
+                    codes_dict[code] += 1
 
-        if count == 10:
-            print("File size: {}".format(size))
-            for key, val in sorted(codes_dict.items()):
-                if val != 0:
-                    print("{}: {}".format(key, val))
+            if count == 10:
+                print("File size: {}".format(size))
+                for key, val in sorted(codes_dict.items()):
+                    if val != 0:
+                        print("{}: {}".format(key, val))
 
-            count = 0
+                count = 0
 
 finally:
     print("File size: {}".format(size))
