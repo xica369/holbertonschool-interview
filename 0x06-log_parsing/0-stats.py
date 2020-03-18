@@ -14,7 +14,7 @@ try:
         split = line.split()
         split = split[::-1]
 
-        if len(split) > 7:
+        if len(split) > 2:
             count += 1
 
             if count <= 10:
