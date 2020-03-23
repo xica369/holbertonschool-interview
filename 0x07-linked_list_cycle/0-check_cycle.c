@@ -19,10 +19,12 @@ int check_cycle(listint_t *list)
 	aux1 = list;
 	aux2 = list->next->next;
 
-	for (; aux2 != NULL; aux1 = aux1->next, aux2 = aux2->next->next)
+	for (; aux2 != NULL; aux1 = aux1->next)
 	{
 		if (aux2 == aux1)
 			return (1);
+
+		aux2 = aux2->next->next;
 	}
 	return (0);
 }
