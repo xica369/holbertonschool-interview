@@ -19,9 +19,7 @@ def validUTF8(data):
 
     for byte in data:
 
-        byte = bin(byte)
-        byte = byte.replace('0b', '')
-        byte = byte.rjust(8, '0')
+        byte = format(byte, '#010b')[-8:]
 
         if continuos_10 == 0:
             if byte[0] == '1':
