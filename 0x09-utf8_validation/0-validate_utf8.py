@@ -18,14 +18,15 @@ def validUTF8(data):
     continuos_10 = 0
 
     for byte in data:
-        byte = bin(byte)
-        byte = byte.replace('0b', '')
-        byte = byte.rjust(8, '0')
+
+        byte = format(byte, '#010b')[-8:]
 
         if continuos_10 == 0:
-            for cont in byte:
-                if cont == "0":
+
+            for num in byte:
+                if num == '0':
                     break
+
                 continuos_10 += 1
 
             if continuos_10 == 0:
@@ -33,9 +34,9 @@ def validUTF8(data):
 
             if continuos_10 == 1 or continuos_10 > 4:
                 return False
-
         else:
-            if not byte.startswith("10"):
+
+            if not (byte[0] == '1' and byte[1] == '0'):
                 return False
 
         continuos_10 -= 1
