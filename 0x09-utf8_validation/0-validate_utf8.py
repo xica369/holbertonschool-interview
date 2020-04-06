@@ -15,18 +15,30 @@ def validUTF8(data):
     Each integer represents 1 byte of data, therefore you only need
     to handle the 8 least significant bits of each integer"""
 
+    if not isinstance(data, list):
+        return False
+
     continuos_10 = 0
 
     for byte in data:
+        if not isinstance(byte, int):
+            return False
+
         byte = bin(byte)
         byte = byte.replace('0b', '')
         byte = byte.rjust(8, '0')
 
+        if continuos_10 == 0:
+            if byte[0] == '1':
+                continuos_10 = len(byte.split('0')[0])
+
         if continuos_10 != 0:
+            if continuos_10 == 1 or continuos_10 > 4:
+                return False
+
             if not byte.startswith('10'):
                 return False
 
-        if byte[0] == '1':
-            continuos_10 = len(byte.split('0')[0]) - 1
+            continuos_10 -= 1
 
     return True
