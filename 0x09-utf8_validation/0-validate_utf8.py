@@ -41,4 +41,4 @@ def validUTF8(data):
 
         continuos_10 -= 1
 
-    return True
+    return continuos_10 == 0
