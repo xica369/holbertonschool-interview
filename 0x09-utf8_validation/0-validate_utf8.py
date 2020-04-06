@@ -32,9 +32,6 @@ def validUTF8(data):
             if byte[0] == '1':
                 continuos_10 = len(byte.split('0')[0])
 
-        if continuos_10 == 0:
-            continue
-
         if continuos_10 != 0:
             if continuos_10 == 1 or continuos_10 > 4:
                 return False
@@ -42,6 +39,6 @@ def validUTF8(data):
             if not byte.startswith('10'):
                 return False
 
-        continuos_10 -= 1
+            continuos_10 -= 1
 
-    return True
+    return continuos_10 == 0
