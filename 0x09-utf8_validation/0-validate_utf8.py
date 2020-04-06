@@ -15,6 +15,7 @@ def validUTF8(data):
     Each integer represents 1 byte of data, therefore you only need
     to handle the 8 least significant bits of each integer"""
 
+    validate = False
     continuos_10 = 0
 
     for byte in data:
@@ -37,4 +38,7 @@ def validUTF8(data):
 
         continuos_10 -= 1
 
-    return continuos_10 == 0
+    if continuos_10 == 0:
+        validate = True
+
+    return validate
