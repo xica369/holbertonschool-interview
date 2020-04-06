@@ -15,14 +15,9 @@ def validUTF8(data):
     Each integer represents 1 byte of data, therefore you only need
     to handle the 8 least significant bits of each integer"""
 
-    if not isinstance(data, list):
-        return False
-
     continuos_10 = 0
-    for byte in data:
-        if not isinstance(byte, int):
-            return False
 
+    for byte in data:
         byte = bin(byte)
         byte = byte.replace('0b', '')
         byte = byte.rjust(8, '0')
