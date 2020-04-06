@@ -28,10 +28,13 @@ def validUTF8(data):
             if continuos_10 == 1 or continuos_10 > 4:
                 return False
 
+            if continuos_10 == 0:
+                continue
+
         else:
             if not byte.startswith('10'):
                 return False
 
-            continuos_10 -= 1
+        continuos_10 -= 1
 
     return continuos_10 == 0
