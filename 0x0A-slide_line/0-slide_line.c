@@ -66,16 +66,15 @@ int slide_line(int *line, size_t size, int direction)
 
 int validate(int *line, size_t size, int direction)
 {
-	size_t cont;
 
 	if (direction != SLIDE_LEFT && direction != SLIDE_RIGHT)
 		return (0);
 
-	for (cont = 0; cont < size; cont++)
-	{
-		if (line[cont] < 0)
-			return (0);
-	}
+	if (line == NULL)
+		return (0);
+
+	if (size < 2)
+		return (0);
 
 	return (1);
 }
