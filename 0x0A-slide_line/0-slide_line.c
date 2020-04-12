@@ -73,7 +73,7 @@ int validate(int *line, size_t size, int direction)
 
 	for (cont = 0; cont < size; cont++)
 	{
-		if (line[0] != 0)
+		if (line[cont] != 0)
 			return (1);
 	}
 
