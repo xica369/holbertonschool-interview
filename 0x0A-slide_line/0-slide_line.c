@@ -37,9 +37,9 @@ int slide_line(int *line, size_t size, int direction)
 				tem1--;
 				aux1--;
 				break; }
-			if (line[cont2] != 0 && line[cont1] != 0)
+			if (line[cont2] != 0)
 				break;
-			direction == SLIDE_LEFT ? cont2++ : cont1--;
+			direction == SLIDE_LEFT ? cont2++ : cont2--;
 			tem2++; }
 		if (line[cont1] == 0)
 			break;
