@@ -23,7 +23,7 @@ int slide_line(int *line, size_t size, int direction)
 	{       tem2 = aux1 + 1;
 		aux2 = cont2;
 		flag = 0;
-		while (tem2 <= size)
+		while (tem2 < size)
 		{
 			if (line[cont1] != 0 && line[cont2] == line[cont1])
 			{	line[cont1] = line[cont1] * 2;
