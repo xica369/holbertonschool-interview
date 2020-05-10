@@ -22,7 +22,7 @@ def queens_potions(N, row, queens):
         for queen in queens:
 
             # validates if there is another queen on the diagonals
-            if abs(column - queen[1]) == abs(queen[0] - row):
+            if abs(column - queen[1]) == abs(row - queen[0]):
                 flag = 1
                 break
 
