@@ -11,19 +11,16 @@ The program should print everrow possible solution to the problem
 import sys
 
 
-if __name__ == "__main__":
-    """receive console arguments and call function"""
+if len(sys.argv) != 2:
+    print("Usage: nqueens N")
+    exit(1)
 
-    if len(sys.argv) != 2:
-        print("Usage: nqueens N")
-        exit(1)
+if sys.argv[1].isdigit() is False:
+    print("N must be a number")
+    exit(1)
 
-    if sys.argv[1].isdigit() is False:
-        print("N must be a number")
-        exit(1)
+Nq = int(sys.argv[1])
 
-    Nq = int(sys.argv[1])
-
-    if Nq < 4:
-        print("N must be at least 4")
-        exit(1)
+if Nq < 4:
+    print("N must be at least 4")
+    exit(1)
