@@ -15,7 +15,7 @@ def queens_potions(N, row, queens):
     """program that solves the N queens problem"""
 
     # iterate over all the columns of the board
-    for column in range(N):
+    for column in range(Nq):
         flag = 0
 
         # compare to queens already located on the board
@@ -36,8 +36,8 @@ def queens_potions(N, row, queens):
             queens.append([row, column])
 
             # function is called if they are not iterated over all the rows
-            if row != N - 1:
-                queens_potions(N, row + 1, queens)
+            if row != Nq - 1:
+                queens_potions(Nq, row + 1, queens)
 
             else:
                 print(queens)
@@ -51,13 +51,13 @@ if __name__ == "__main__":
         exit(1)
 
     try:
-        N = int(sys.argv[1])
+        Nq = int(sys.argv[1])
     except Exception:
         print("N must be a number")
         exit(1)
 
-    if N < 4:
+    if Nq < 4:
         print("N must be at least 4")
         exit(1)
 
-    queens_potions(N, 0, [])
+    queens_potions(Nq, 0, [])
