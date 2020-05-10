@@ -11,6 +11,21 @@ The program should print everrow possible solution to the problem
 import sys
 
 
+if len(sys.argv) != 2:
+    print("Usage: nqueens N")
+    exit(1)
+
+try:
+    Nq = int(sys.argv[1])
+except Exception:
+    print("N must be a number")
+    exit(1)
+
+if Nq < 4:
+    print("N must be at least 4")
+    exit(1)
+
+
 def queens_potions(N, row, queens):
     """program that solves the N queens problem"""
 
@@ -45,19 +60,4 @@ def queens_potions(N, row, queens):
             queens.pop()
 
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: nqueens N")
-        exit(1)
-
-    try:
-        Nq = int(sys.argv[1])
-    except Exception:
-        print("N must be a number")
-        exit(1)
-
-    if Nq < 4:
-        print("N must be at least 4")
-        exit(1)
-
-    queens_potions(Nq, 0, [])
+queens_potions(Nq, 0, [])
