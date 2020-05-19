@@ -46,7 +46,8 @@ avl_t *fill_avl_tree(avl_t *parent, int *array, size_t start, size_t end)
 
 	node->n = array[index];
 	node->parent = parent;
-
+	node->left = NULL;
+	node->right = NULL;
 
 	if (index != start)
 		node->left = fill_avl_tree(node, array, start, index - 1);
