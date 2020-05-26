@@ -24,5 +24,7 @@ typedef struct skiplist_s
 skiplist_t *create_skiplist(int *array, size_t size);
 void print_skiplist(const skiplist_t *list);
 void free_skiplist(skiplist_t *list);
+void free_skiplist(skiplist_t *list);
+void print_skiplist(const skiplist_t *list);
 
 #endif /* SEARCH_ALGOS_H */
