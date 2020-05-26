@@ -22,22 +22,22 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	/* search for the value in express */
 	while (skip && skip->n < value)
 	{
+		/* save the previous skip position */
 		list = skip;
 		skip = skip->express;
 		if (!skip)
-		{
-			/* return to the previous position of express */
-			skip = list;
-
-			/* search for the last index */
-			while (skip->next)
-				skip = skip->next;
 			break;
-		}
 		printf("Value checked at index [%lu] = [%d]\n",
 		       skip->index, skip->n);
 	}
-
+	if (!skip)
+	{
+		/* return to the previous position of express */
+		skip = list;
+		/* search for the last index */
+		while (skip->next)
+			skip = skip->next;
+	}
 	printf("Value found between indexes [%lu] and [%lu]\n",
 	       list->index, skip->index);
 
