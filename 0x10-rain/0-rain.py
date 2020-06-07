@@ -12,7 +12,7 @@ def rain(walls):
     Return: Integer indicating total amount of rainwater retained.
     """
 
-    if not walls:
+    if not walls or sum(walls) == max(walls):
         return 0
 
     if sum(walls) == 0 or len(walls) < 3:
