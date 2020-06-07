@@ -12,10 +12,10 @@ def rain(walls):
     Return: Integer indicating total amount of rainwater retained.
     """
 
-    if not walls or sum(walls) == max(walls):
+    if not walls:
         return 0
 
-    if sum(walls) == 0 or len(walls) < 3:
+    if sum(walls) == max(walls) or len(walls) < 3:
         return 0
 
     # set variables
@@ -44,6 +44,7 @@ def rain(walls):
                 if mayor == 0:
                     mayor = max(walls[idx:])
 
+                    # there are no more walls to check
                     if mayor == 0:
                         retained += (wall * len(spaces)) - sum(spaces)
                         break
