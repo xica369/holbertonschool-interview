@@ -23,7 +23,6 @@ def rain(walls):
     retained = 0
 
     for wall in walls:
-
         if wall != 0 and previous_wall != 0:
             if wall > previous_wall:
                 retained += previous_wall * spaces
