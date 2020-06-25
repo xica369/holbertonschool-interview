@@ -61,7 +61,7 @@ int search(int *array, size_t start, size_t end, int value)
 
 	if (array[index] > value)
 	{
-		return (search(array, start, index - 1, value));
+		return (search(array, start, index + 1, value));
 	}
 
 	return (-1);
