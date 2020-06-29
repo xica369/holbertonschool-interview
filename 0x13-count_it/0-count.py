@@ -24,7 +24,6 @@ def count_words(subreddit, word_list):
             word_dict[word.lower()] = 0
 
         for title in hot_list:
-            print(title)
             title_split = title.split(" ")
 
             for word in title_split:
