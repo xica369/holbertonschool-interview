@@ -11,7 +11,7 @@ The program should print everrow possible solution to the problem
 import sys
 
 
-def queens_potitions(N, row, queens):
+def queens_potitions(Nq, row, queens):
     """program that solves the N queens problem"""
 
     # iterate over all the columns of the board
