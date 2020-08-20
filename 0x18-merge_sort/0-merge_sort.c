@@ -62,7 +62,7 @@ void merge(int *array, int *R, int *L, size_t size)
 void merge_sort(int *array, size_t size)
 {
 	size_t middle = size / 2, index;
-	int R[middle], L[middle];
+	int R[300], L[300];
 
 	if (size < 2 || array == NULL)
 		return;
