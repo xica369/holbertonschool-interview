@@ -30,9 +30,6 @@ def makeChange(coins, total):
             total = total % coin
 
         if total == 0:
-            break
-
-    if total == 0:
-        return cont_coins
+            return cont_coins
 
     return -1
