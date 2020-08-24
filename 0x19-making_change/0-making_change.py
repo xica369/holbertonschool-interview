@@ -20,3 +20,19 @@ def makeChange(coins, total):
 
     if coins is None or coins == []:
         return 0
+
+    coins = sorted(coins, reverse=True)
+    cont_coins = 0
+
+    for coin in coins:
+        if coin <= total:
+            cont_coins += int(total / coin)
+            total = total % coin
+
+        if total == 0:
+            break
+
+    if total == 0:
+        return cont_coins
+
+    return -1
