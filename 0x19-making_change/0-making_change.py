@@ -19,7 +19,7 @@ def makeChange(coins, total):
         return 0
 
     if coins is None or coins == []:
-        return 0
+        return -1
 
     coins = sorted(coins, reverse=True)
     cont_coins = 0
