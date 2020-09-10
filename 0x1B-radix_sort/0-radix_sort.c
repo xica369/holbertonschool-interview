@@ -78,9 +78,6 @@ int get_max(int *arr, size_t size)
 {
 	int max;
 
-	if (!arr || size < 2)
-		return (0);
-
 	for (max = arr[0], --size; size > 1; size--)
 		max = arr[size] > max ? arr[size] : max;
 
@@ -97,10 +94,12 @@ int get_max(int *arr, size_t size)
  */
 void radix_sort(int *array, size_t size)
 {
-	int it, max = get_max(array, size);
+	int it, max;
 
 	if (!array || size < 2)
 		return;
+
+	max = get_max(array, size);
 
 	for (it = 0; power(it) <= max; it++)
 	{
