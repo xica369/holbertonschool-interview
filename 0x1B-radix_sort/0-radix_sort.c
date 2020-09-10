@@ -4,7 +4,7 @@
  * power - calculates 10 to the power of y
  * @y: integer
  *
- * Return: x ^ y
+ * Return: 10 ^ y
  */
 int power(int y)
 {
@@ -16,14 +16,14 @@ int power(int y)
 }
 
 /**
- * bucket_sorted - sorts the numbers in a bucket
+ * sorted - sorts the numbers in a bucket
  * @arr: integer array
  * @it: iterator
  * @size: number of elements
  *
  * Return: integer
  */
-int *bucket_sorted(int *arr, int it, size_t size)
+int *sorted(int *arr, int it, size_t size)
 {
 	int i, j, digit, **buckets = NULL;
 	size_t b_size;
@@ -104,7 +104,7 @@ void radix_sort(int *array, size_t size)
 
 	for (it = 0; power(it) <= max; it++)
 	{
-		bucket_sorted(array, it, size);
+		sorted(array, it, size);
 		print_array(array, size);
 	}
 }
