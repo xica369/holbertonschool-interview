@@ -39,6 +39,9 @@ def get_prime(nums):
     new_nums = []
     for num in nums:
 
+        if num == 1:
+            prime_numbers.append(num)
+
         if num >= 2:
             flag = 0
 
@@ -51,5 +54,8 @@ def get_prime(nums):
                 prime_numbers.append(num)
             else:
                 new_nums.append(num)
+
+    set_prime = set(prime_numbers)
+    prime_numbers = list(set_prime)
 
     return prime_numbers, new_nums
