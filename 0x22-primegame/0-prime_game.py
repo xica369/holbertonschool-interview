@@ -24,7 +24,7 @@ def isWinner(x, nums):
             if new_numbers[num] % prime == 0:
                 new_numbers[num] = 0
 
-    new_numbers.remove(0)
+    # new_numbers.remove(0)
 
     len_prime_num = len(prime_numbers)
     len_new_num = len(new_numbers)
@@ -44,10 +44,10 @@ def isWinner(x, nums):
                 Maria += 1
                 Ben = 0
 
-    if Maria > Ben:
+    if Maria < Ben:
         return "Maria"
 
-    if Maria < Ben:
+    if Maria > Ben:
         return "Ben"
 
     return None
