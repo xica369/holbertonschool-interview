@@ -24,6 +24,8 @@ def isWinner(x, nums):
             if new_numbers[num] % prime == 0:
                 new_numbers[num] = 0
 
+    new_numbers.remove(0)
+
     len_prime_num = len(prime_numbers)
     len_new_num = len(new_numbers)
 
