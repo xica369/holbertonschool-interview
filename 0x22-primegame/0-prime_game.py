@@ -49,7 +49,7 @@ def isWinner(x, nums):
             Maria += 1
 
         else:
-            Bean += 1
+            Ben += 1
 
     if Maria < Ben:
         return "Ben"
