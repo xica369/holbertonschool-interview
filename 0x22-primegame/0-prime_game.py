@@ -25,9 +25,9 @@ def isWinner(x, nums):
 
     if len_prime_num > 0:
         if len_prime_num % 2 == 0:
-            return "Maria"
-        else:
             return "Ben"
+        else:
+            return "Maria"
 
     return None
 
@@ -38,9 +38,6 @@ def get_prime(nums):
     prime_numbers = []
     new_nums = []
     for num in nums:
-
-        if num < 2:
-            new_nums.append(num)
 
         if num >= 2:
             flag = 0
