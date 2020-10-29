@@ -24,31 +24,13 @@ def isWinner(x, nums):
             if new_numbers[num] % prime == 0:
                 new_numbers[num] = 0
 
-    # new_numbers.remove(0)
-
     len_prime_num = len(prime_numbers)
-    len_new_num = len(new_numbers)
 
     if len_prime_num > 0:
         if len_prime_num % 2 == 0:
-            Ben += 1
+            return "Ben"
         else:
-            Maria += 1
-    if len_new_num > 0:
-        if Maria == 1:
-            if len_new_num % 2 == 0:
-                Maria = 0
-                Ben += 1
-        if Ben == 1:
-            if len_new_num % 2 == 0:
-                Maria += 1
-                Ben = 0
-
-    if Maria < Ben:
-        return "Maria"
-
-    if Maria > Ben:
-        return "Ben"
+            return "Maria"
 
     return None
 
