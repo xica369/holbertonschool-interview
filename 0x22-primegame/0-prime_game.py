@@ -14,9 +14,6 @@ def isWinner(x, nums):
     If the winner cannot be determined, return None
     """
 
-    Maria = 0
-    Ben = 0
-
     prime_numbers, new_numbers = get_prime(nums)
 
     for prime in prime_numbers:
@@ -28,9 +25,9 @@ def isWinner(x, nums):
 
     if len_prime_num > 0:
         if len_prime_num % 2 == 0:
-            return "Ben"
-        else:
             return "Maria"
+        else:
+            return "Ben"
 
     return None
 
