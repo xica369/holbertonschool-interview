@@ -44,10 +44,10 @@ def isWinner(x, nums):
                 Maria += 1
                 Ben = 0
 
-    if Maria < Ben:
+    if Maria > Ben:
         return "Maria"
 
-    if Maria > Ben:
+    if Maria < Ben:
         return "Ben"
 
     return None
