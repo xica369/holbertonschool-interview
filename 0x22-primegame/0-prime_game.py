@@ -33,7 +33,7 @@ def isWinner(x, nums):
         else:
             Ben += 1
 
-    if len_new_num > 0:
+    if len_new_num > 0 and len_prime_num > 0::
         if Maria == 1:
             if len_new_num % 2 == 0:
                 Ben = 0
