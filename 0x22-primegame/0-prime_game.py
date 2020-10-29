@@ -29,25 +29,32 @@ def isWinner(x, nums):
 
     if len_prime_num > 0:
         if len_prime_num % 2 == 0:
-            Ben += 1
-        else:
             Maria += 1
+        else:
+            Ben += 1
 
-    if len_new_num > 0:
+    if len_new_num > 0 and len_prime_num > 0:
         if Maria == 1:
             if len_new_num % 2 == 0:
-                Maria = 0
-                Ben += 1
+                Ben = 0
+                Maria += 1
 
         if Ben == 1:
             if len_new_num % 2 == 0:
-                Maria += 1
-                Ben = 0
+                Ben += 1
+                Maria = 0
 
-    if Maria > Ben:
-        return "Ben"
+    if len_new_num > 0 and len_prime_num < 0:
+        if len_new_num % 2 == 0:
+            Maria += 1
+
+        else:
+            Bean += 1
 
     if Maria < Ben:
+        return "Ben"
+
+    if Maria > Ben:
         return "Maria"
 
     return None
