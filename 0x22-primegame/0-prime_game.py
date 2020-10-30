@@ -14,12 +14,7 @@ def isWinner(x, nums):
     If the winner cannot be determined, return None
     """
 
-    prime_numbers, new_numbers = get_prime(nums)
-
-    for prime in prime_numbers:
-        for num in range(len(new_numbers)):
-            if new_numbers[num] % prime == 0:
-                new_numbers[num] = 0
+    prime_numbers = get_prime(nums)
 
     len_prime_num = len(prime_numbers)
 
@@ -36,7 +31,7 @@ def get_prime(nums):
     """get all prime numbers"""
 
     prime_numbers = []
-    new_nums = []
+
     for num in nums:
 
         if num == 1:
@@ -52,10 +47,8 @@ def get_prime(nums):
 
             if flag == 0:
                 prime_numbers.append(num)
-            else:
-                new_nums.append(num)
 
     set_prime = set(prime_numbers)
     prime_numbers = list(set_prime)
 
-    return prime_numbers, new_nums
+    return prime_numbers
