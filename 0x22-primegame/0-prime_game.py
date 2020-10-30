@@ -20,9 +20,9 @@ def isWinner(x, nums):
 
     if len_prime_num > 0:
         if len_prime_num % 2 == 0:
-            return "Ben"
-        else:
             return "Maria"
+        else:
+            return "Ben"
 
     return None
 
